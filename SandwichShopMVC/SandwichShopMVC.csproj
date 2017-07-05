@@ -187,6 +187,7 @@
     <Content Include="Views\Inventory.cshtml" />
     <Content Include="Views\Ingredients.cshtml" />
     <Content Include="Views\Menu.cshtml" />
+    <Content Include="Views\Receipts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
