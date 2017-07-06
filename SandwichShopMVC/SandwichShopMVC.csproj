@@ -153,11 +153,17 @@
     <Compile Include="Controllers\IngredientController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="DAL\RestaurantConfiguration.cs" />
     <Compile Include="DAL\RestaurantContext.cs" />
     <Compile Include="DAL\RestaurantInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707062048122_InitialCreate.cs" />
+    <Compile Include="Migrations\201707062048122_InitialCreate.Designer.cs">
+      <DependentUpon>201707062048122_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Ingredients.cs" />
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\Menu.cs" />
@@ -239,6 +245,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707062048122_InitialCreate.resx">
+      <DependentUpon>201707062048122_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
