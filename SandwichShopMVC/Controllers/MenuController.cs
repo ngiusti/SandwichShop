@@ -38,7 +38,7 @@ namespace SandwichShopMVC.Controllers
 
         // GET: Menu/Create
         public ActionResult Create()
-        {
+        {     
             return View();
         }
 

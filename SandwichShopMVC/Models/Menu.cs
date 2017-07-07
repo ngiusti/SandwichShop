@@ -9,7 +9,9 @@ namespace SandwichShopMVC.Models
     {
         public int MenuID { get; set; }
         public string Name { get; set; }
+       
 
         public virtual ICollection<Inventory> Inventory { get; set; }
+      
     }
 }
