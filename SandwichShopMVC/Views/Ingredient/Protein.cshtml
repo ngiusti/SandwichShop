@@ -9,13 +9,14 @@
 <div data-role="header">
     <div data-role="navbar">
         <ul class="nav navbar-nav">
-            <li>@Html.ActionLink("Bread", "Index", "Home")</li>
-            <li>@Html.ActionLink("Protien", "Index", "Ingredient")</li>
-            <li>@Html.ActionLink("Dairy", "Index", "Menu")</li>
-            <li>@Html.ActionLink("Produce", "Index", "Inventory")</li>
-            <li>@Html.ActionLink("Beverage", "Index", "Inventory")</li>
-            <li>@Html.ActionLink("Condiment", "Index", "Inventory")</li>
-            <li>@Html.ActionLink("Side", "Index", "Inventory")</li>
+            <li>@Html.ActionLink("All", "Index", "Ingredient")</li>
+            <li>@Html.ActionLink("Bread", "Bread", "Ingredient")</li>
+            <li>@Html.ActionLink("Protein", "Protein", "Ingredient")</li>
+            <li>@Html.ActionLink("Dairy", "Dairy", "Ingredient")</li>
+            <li>@Html.ActionLink("Produce", "Produce", "Ingredient")</li>
+            <li>@Html.ActionLink("Beverage", "Beverage", "Ingredient")</li>
+            <li>@Html.ActionLink("Condiment", "Condiment", "Ingredient")</li>
+            <li>@Html.ActionLink("Side", "Side", "Ingredient")</li>
         </ul>
     </div>
 </div>
@@ -31,12 +32,17 @@
         <th>
             @Html.DisplayNameFor(model => model.Quantity)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
         <th></th>
     </tr>
 
-    @foreach (Enum.Protien item in Model)
+    @foreach (var item in Model)
     {
-        <tr>
+        if (item.Category.ToString() == "Protein")
+        {
+            <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -47,13 +53,15 @@
                 @Html.DisplayFor(modelItem => item.Quantity)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.ID })
             </td>
         </tr>
+        }
     }
-
 </table>
 
 
