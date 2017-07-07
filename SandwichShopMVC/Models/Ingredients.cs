@@ -16,14 +16,6 @@ namespace SandwichShopMVC.Models
         Side
     }
 
-    public class Tab
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public bool Visible { get; set; }
-        public string Url { get; set; }
-    }
-
     public class Ingredients
     {
         public int ID { get; set; }
