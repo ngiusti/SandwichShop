@@ -124,5 +124,34 @@ namespace SandwichShopMVC.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Protein()
+        {
+                return View(db.Ingredients.ToList());
+        }
+        public ActionResult Bread()
+        {
+            return View(db.Ingredients.ToList());
+        }
+        public ActionResult Dairy()
+        {
+            return View(db.Ingredients.ToList());
+        }
+        public ActionResult Produce()
+        {
+            return View(db.Ingredients.ToList());
+        }
+        public ActionResult Condiment()
+        {
+            return View(db.Ingredients.ToList());
+        }
+        public ActionResult Side()
+        {
+            return View(db.Ingredients.ToList());
+        }
+        public ActionResult Beverage()
+        {
+            return View(db.Ingredients.ToList());
+        }
     }
 }

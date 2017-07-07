@@ -217,10 +217,15 @@
     <Content Include="Views\Menu\Index.cshtml" />
     <Content Include="Views\Ingredient\Create.cshtml" />
     <Content Include="Views\Ingredient\Delete.cshtml" />
-    <Content Include="Views\Ingredient\Details.cshtml" />
     <Content Include="Views\Ingredient\Edit.cshtml" />
     <Content Include="Views\Ingredient\Index.cshtml" />
-    <Content Include="Views\Ingredient\Protien.cshtml" />
+    <Content Include="Views\Ingredient\Protein.cshtml" />
+    <Content Include="Views\Ingredient\Bread.cshtml" />
+    <Content Include="Views\Ingredient\Dairy.cshtml" />
+    <Content Include="Views\Ingredient\Produce.cshtml" />
+    <Content Include="Views\Ingredient\Condiment.cshtml" />
+    <Content Include="Views\Ingredient\Side.cshtml" />
+    <Content Include="Views\Ingredient\Beverage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
