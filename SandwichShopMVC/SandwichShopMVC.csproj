@@ -167,7 +167,6 @@
     <Compile Include="Models\Ingredients.cs" />
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\Menu.cs" />
-    <Compile Include="Models\Receipts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<SandwichShopMVC.Models.Inventory>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Update Sales";
 }
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -37,3 +34,5 @@
 }
 
 </table>
+
+<a class="btn btn-default" @Html.ActionLink("Add", "Create")</a>
