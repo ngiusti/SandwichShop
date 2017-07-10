@@ -3,13 +3,12 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Ingredients List</h2>
+<h2>Inventory</h2>
 
 <div data-role="header">
     <div data-role="navbar">
         <ul class="nav navbar-nav">
-            <li>@Html.ActionLink("All", "Index", "Ingredient")</li>
+            <li class="highLight">@Html.ActionLink("All", "Index", "Ingredient")</li>
             <li>@Html.ActionLink("Bread", "Bread", "Ingredient")</li>
             <li>@Html.ActionLink("Protein", "Protein", "Ingredient")</li>
             <li>@Html.ActionLink("Dairy", "Dairy", "Ingredient")</li>
@@ -20,7 +19,6 @@
         </ul>
     </div>
 </div>
-
 <table class="table">
     <tr>
         <th>
@@ -65,3 +63,5 @@
     <a class="btn btn-default" @Html.ActionLink("Add", "Create")</a>
     <a class="btn btn-default" @Html.ActionLink("Update Sales", "Index","Inventory")</a>
 </div>
+
+

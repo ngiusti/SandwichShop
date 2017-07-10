@@ -225,6 +225,8 @@
     <Content Include="Views\Ingredient\Condiment.cshtml" />
     <Content Include="Views\Ingredient\Side.cshtml" />
     <Content Include="Views\Ingredient\Beverage.cshtml" />
+    <Content Include="Views\Shared\IngredientLayout.cshtml" />
+    <Content Include="Views\Ingredient\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

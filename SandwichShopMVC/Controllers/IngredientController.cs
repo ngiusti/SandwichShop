@@ -18,6 +18,7 @@ namespace SandwichShopMVC.Controllers
         // GET: Ingredient
         public ActionResult Index()
         {
+            ViewData["Layout"] = "IngredientLayout";
             return View(db.Ingredients.ToList());
         }
 

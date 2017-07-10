@@ -26,3 +26,7 @@ textarea {
 .updateButtons {
     margin: 15px;
 }
+
+.highLight {
+    background-color: #d1d1d1;
+}

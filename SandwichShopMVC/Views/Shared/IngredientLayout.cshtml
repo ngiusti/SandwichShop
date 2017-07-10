@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - MVC Sandwiches</title>
-    @Styles.Render("~/Content/css")
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     @Scripts.Render("~/bundles/jquery")
     
 </head>
@@ -38,7 +39,6 @@
     </div>
 
     @Scripts.Render("~/bundles/bootstrap")
-    <link rel="stylesheet" type="text/css" href="Site.css">
     @RenderSection("scripts", required: false)
 </body>
 
