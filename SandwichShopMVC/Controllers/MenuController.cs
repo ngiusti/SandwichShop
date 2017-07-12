@@ -13,7 +13,8 @@ namespace SandwichShopMVC.Controllers
 {
     public class MenuController : Controller
     {
-        private RestaurantContext db = new RestaurantContext();
+        // This was originally private
+        private RestaurantEntities db = new RestaurantEntities();
 
         // GET: Menu
         public ActionResult Index()
@@ -24,6 +25,7 @@ namespace SandwichShopMVC.Controllers
         // GET: Menu/Details/5
         public ActionResult Details(int? id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -33,7 +35,19 @@ namespace SandwichShopMVC.Controllers
             {
                 return HttpNotFound();
             }
-            return View(menu);
+            Inventory inventory = db.Inventory.Find(id);
+            if (inventory == null)
+            {
+                return HttpNotFound();
+            }           
+            Ingredients ingredients = db.Ingredients.Find(id);
+            if (ingredients == null)
+            {
+                return HttpNotFound();
+            }
+
+            var tuple = new Tuple<Ingredients, Menu, Inventory>(ingredients, menu, inventory);
+            return View(tuple);         
         }
 
         // GET: Menu/Create

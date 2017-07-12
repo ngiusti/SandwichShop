@@ -13,7 +13,7 @@ namespace SandwichShopMVC.Controllers
 {
     public class InventoryController : Controller
     {
-        private RestaurantContext db = new RestaurantContext();
+        private RestaurantEntities db = new RestaurantEntities();
 
         // GET: Inventory
         public ActionResult Index()

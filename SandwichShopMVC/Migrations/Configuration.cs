@@ -5,14 +5,14 @@ namespace SandwichShopMVC.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<SandwichShopMVC.DAL.RestaurantContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<SandwichShopMVC.DAL.RestaurantEntities>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(SandwichShopMVC.DAL.RestaurantContext context)
+        protected override void Seed(SandwichShopMVC.DAL.RestaurantEntities context)
         {
             //  This method will be called after migrating to the latest version.
 

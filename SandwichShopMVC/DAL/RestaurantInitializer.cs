@@ -7,9 +7,9 @@ using SandwichShopMVC.Models;
 
 namespace SandwichShopMVC.DAL
 {
-    public class RestaurantInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<RestaurantContext>
+    public class RestaurantInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<RestaurantEntities>
     {
-        protected override void Seed(RestaurantContext context)
+        protected override void Seed(RestaurantEntities context)
         {
             // Adding to the Ingredient Model to populate table with Mock Data
             var listOfIngredients = new List<Ingredients>

@@ -24,7 +24,8 @@ namespace SandwichShopMVC.Models
         public double Quantity { get; set; }
         public Category Category { get; set; }
 
-        public virtual ICollection<Inventory> Inventory { get; set; }
-           
+        public virtual IEnumerable<Inventory> Inventory { get; set; }
+        public virtual IEnumerable<Menu> Menu { get; set; }
+
     }
 }

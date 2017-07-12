@@ -8,9 +8,9 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace SandwichShopMVC.DAL
 {
-    public class RestaurantContext: DbContext
+    public class RestaurantEntities: DbContext
     {
-        public RestaurantContext() : base("RestaurantContext")
+        public RestaurantEntities() : base("RestaurantContext")
         {
         }
 
