@@ -16,9 +16,18 @@ namespace SandwichShopMVC.Controllers
         private RestaurantEntities db = new RestaurantEntities();
 
         // GET: Inventory
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            return View(db.Inventory.ToList());
+            
+            List<Menu> menu = db.Menu.ToList();
+            UpdateSales inventory = db.Inventory.Find(id);
+
+            var updateSalestuple = new Tuple<List<Menu>, UpdateSales>(menu, inventory);
+            return View(updateSalestuple);
+            
+
+            //return View(db.Inventory.ToList());
+            
         }
 
         // GET: Inventory/Create
@@ -32,10 +41,11 @@ namespace SandwichShopMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,InventoryName,Quantity")] UpdateSales inventory)
+        public ActionResult Create([Bind(Include = "ID,Name,Quantity")] UpdateSales inventory)
         {
             if (ModelState.IsValid)
             {
+                
                 db.Inventory.Add(inventory);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -64,7 +74,7 @@ namespace SandwichShopMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,InventoryName,Quantity")] UpdateSales inventory)
+        public ActionResult Edit([Bind(Include = "ID,Name,Quantity")] UpdateSales inventory)
         {
             if (ModelState.IsValid)
             {

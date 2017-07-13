@@ -15,8 +15,9 @@ namespace SandwichShopMVC.Controllers
 {
     public class MenuController : Controller
     {
-        // This was originally private
-        public RestaurantEntities db = new RestaurantEntities();
+        
+        private RestaurantEntities db = new RestaurantEntities();
+
 
         // GET: Menu
         public ActionResult Index()
@@ -47,8 +48,8 @@ namespace SandwichShopMVC.Controllers
                 return HttpNotFound();
             }
               
-            var tuple = new Tuple<List<Ingredients>, Menu>(ingredients, menu);
-            return View(tuple);         
+            var menuTuple = new Tuple<List<Ingredients>, Menu>(ingredients, menu);
+            return View(menuTuple);         
         }
 
         // GET: Menu/Create
@@ -62,10 +63,15 @@ namespace SandwichShopMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MenuID,Name")] Menu menu)
+        public ActionResult Create([Bind(Include = "MenuID,Name,Ingredients")] Menu menu, UpdateSales inventory)
         {
             if (ModelState.IsValid)
             {
+                //
+                // This automatically adds any new sandwich created on the menu page
+                // to the Update Sales page
+                //
+                db.Inventory.Add(inventory);
                 db.Menu.Add(menu);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -1,38 +1,44 @@
-﻿@model IEnumerable<SandwichShopMVC.Models.UpdateSales>
+﻿@using SandwichShopMVC.Models
+@model Tuple<List<Menu>, UpdateSales>
 
 @{
     ViewBag.Title = "Update Sales";
 }
 
-<h2>Index</h2>
+<h2>Update Sales</h2>
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.Item2.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Quantity)
+            @Html.DisplayNameFor(model => model.Item2.Quantity)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (Menu menu in Model.Item1) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+           @menu.Name
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Quantity)
+            @Html.DisplayFor(model => model.Item2.Quantity)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            
         </td>
     </tr>
 }
-
 </table>
+<p>
+    <!--There is an issue here that is saying that there is no instantiated instance of an object-->
+    <!--These are just the Edit and Delete links respectively-->
+    <!--We possibly don't need these anyways-->
+
+    <!--@@Html.ActionLink("Edit", "Edit", new { id=Model.Item2.ID}) |-->
+    <!--@@Html.ActionLink("Delete", "Delete", new { id=Model.Item2.ID })-->
+</p>
 
 <a class="btn btn-default" @Html.ActionLink("Add", "Create")</a>
