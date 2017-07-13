@@ -9,12 +9,14 @@ using System.Web.Mvc;
 using SandwichShopMVC.DAL;
 using SandwichShopMVC.Models;
 
+
+
 namespace SandwichShopMVC.Controllers
 {
     public class MenuController : Controller
     {
         // This was originally private
-        private RestaurantEntities db = new RestaurantEntities();
+        public RestaurantEntities db = new RestaurantEntities();
 
         // GET: Menu
         public ActionResult Index()
@@ -30,23 +32,22 @@ namespace SandwichShopMVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Menu menu = db.Menu.Find(id);
-            if (menu == null)
-            {
-                return HttpNotFound();
-            }
-            Inventory inventory = db.Inventory.Find(id);
-            if (inventory == null)
-            {
-                return HttpNotFound();
-            }           
-            Ingredients ingredients = db.Ingredients.Find(id);
+
+            // By making a list we have access to all of the ingredients
+            List<Ingredients> ingredients = db.Ingredients.ToList();
             if (ingredients == null)
             {
                 return HttpNotFound();
             }
 
-            var tuple = new Tuple<Ingredients, Menu, Inventory>(ingredients, menu, inventory);
+            // This is allowing us to grab the newly created menu items by id
+            Menu menu = db.Menu.Find(id);
+            if (menu == null)
+            {
+                return HttpNotFound();
+            }
+              
+            var tuple = new Tuple<List<Ingredients>, Menu>(ingredients, menu);
             return View(tuple);         
         }
 

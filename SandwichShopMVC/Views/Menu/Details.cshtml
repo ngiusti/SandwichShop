@@ -1,5 +1,5 @@
 ﻿@using SandwichShopMVC.Models;
-@model Tuple<Ingredients, Menu, Inventory>
+@model Tuple<List<Ingredients>, Menu>
 
 
 @{
@@ -13,38 +13,36 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(tuple => tuple.Item2.Name)
+            @Html.DisplayNameFor(Model => Model.Item2.Name)
         </dt>
-
+        <!--This is where the name is displayed for the 'header'-->
         <dd>
-            @Html.DisplayFor(tuple => tuple.Item2.Name)
+            @Html.DisplayFor(Model => Model.Item2.Name)
         </dd>       
-
-        <dt>
-            @Html.DisplayNameFor(tuple => tuple.Item3.Ingredients)
-        </dt>
+     
         <dd>
             <table class="table">
                 <tr>
-                    <th>Ingredient</th>
+                    <th>
+                        Ingredient
+                    </th>
+
+                    <th>
+                        Amount
+                    </th>
+                 </tr>
+                    
+              @foreach (Ingredients ingredients in Model.Item1)
+              {
+                <tr>
                     <td>
-                        @Html.DisplayFor(tuple => tuple.Item1.Name)
+                        @ingredients.Name
                     </td>
-                    <th>Amount</th>
-                        @Html.DisplayFor(tuple => tuple.Item3.Quantity)
+                    <td>
+                        @ingredients.Quantity
+                    </td>
                 </tr>
-                @*@foreach (Ingredients ingredients in Model.Item1 )
-    {
-       <tr>
-           <td>
-               @Html.DisplayFor( => item.InventoryName)
-           </td>
-           <td>
-               @Html.DisplayFor(modelItem => item.Quantity)
-           </td>
-       </tr>
-    }
-                *@
+              }                       
             </table>
         </dd>
     </dl>
