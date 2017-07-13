@@ -9,10 +9,10 @@ using System.Data.Entity;
 
 namespace SandwichShopMVC.Models
 {
-    public class Inventory
+    public class UpdateSales
     {
         public int ID { get; set; }
-        public string InventoryName { get; set; }
+        public string Name { get; set; }
         public int? Quantity { get; set; }
 
         public virtual Ingredients Ingredients { get; set; }

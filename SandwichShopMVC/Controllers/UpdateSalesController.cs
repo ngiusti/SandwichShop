@@ -11,7 +11,7 @@ using SandwichShopMVC.Models;
 
 namespace SandwichShopMVC.Controllers
 {
-    public class InventoryController : Controller
+    public class UpdateSalesController : Controller
     {
         private RestaurantEntities db = new RestaurantEntities();
 
@@ -19,21 +19,6 @@ namespace SandwichShopMVC.Controllers
         public ActionResult Index()
         {
             return View(db.Inventory.ToList());
-        }
-
-        // GET: Inventory/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Inventory inventory = db.Inventory.Find(id);
-            if (inventory == null)
-            {
-                return HttpNotFound();
-            }
-            return View(inventory);
         }
 
         // GET: Inventory/Create
@@ -47,7 +32,7 @@ namespace SandwichShopMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,InventoryName,Quantity")] Inventory inventory)
+        public ActionResult Create([Bind(Include = "ID,InventoryName,Quantity")] UpdateSales inventory)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +51,7 @@ namespace SandwichShopMVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Inventory inventory = db.Inventory.Find(id);
+            UpdateSales inventory = db.Inventory.Find(id);
             if (inventory == null)
             {
                 return HttpNotFound();
@@ -79,7 +64,7 @@ namespace SandwichShopMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,InventoryName,Quantity")] Inventory inventory)
+        public ActionResult Edit([Bind(Include = "ID,InventoryName,Quantity")] UpdateSales inventory)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +82,7 @@ namespace SandwichShopMVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Inventory inventory = db.Inventory.Find(id);
+            UpdateSales inventory = db.Inventory.Find(id);
             if (inventory == null)
             {
                 return HttpNotFound();
@@ -110,7 +95,7 @@ namespace SandwichShopMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Inventory inventory = db.Inventory.Find(id);
+            UpdateSales inventory = db.Inventory.Find(id);
             db.Inventory.Remove(inventory);
             db.SaveChanges();
             return RedirectToAction("Index");

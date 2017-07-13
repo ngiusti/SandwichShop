@@ -35,7 +35,7 @@ namespace SandwichShopMVC.Controllers
             {
                 return HttpNotFound();
             }
-            Inventory inventory = db.Inventory.Find(id);
+            UpdateSales inventory = db.Inventory.Find(id);
             if (inventory == null)
             {
                 return HttpNotFound();
@@ -46,7 +46,7 @@ namespace SandwichShopMVC.Controllers
                 return HttpNotFound();
             }
 
-            var tuple = new Tuple<Ingredients, Menu, Inventory>(ingredients, menu, inventory);
+            var tuple = new Tuple<Ingredients, Menu, UpdateSales>(ingredients, menu, inventory);
             return View(tuple);         
         }
 

@@ -9,7 +9,7 @@ namespace SandwichShopMVC.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(SandwichShopMVC.DAL.RestaurantEntities context)

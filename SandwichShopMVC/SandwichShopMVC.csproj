@@ -151,7 +151,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngredientController.cs" />
-    <Compile Include="Controllers\InventoryController.cs" />
+    <Compile Include="Controllers\UpdateSalesController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="DAL\RestaurantConfiguration.cs" />
     <Compile Include="DAL\RestaurantEntities.cs" />
@@ -169,7 +169,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Ingredients.cs" />
-    <Compile Include="Models\Inventory.cs" />
+    <Compile Include="Models\UpdateSales.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -208,11 +208,10 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Inventory\Create.cshtml" />
-    <Content Include="Views\Inventory\Delete.cshtml" />
-    <Content Include="Views\Inventory\Details.cshtml" />
-    <Content Include="Views\Inventory\Edit.cshtml" />
-    <Content Include="Views\Inventory\Index.cshtml" />
+    <Content Include="Views\UpdateSales\Create.cshtml" />
+    <Content Include="Views\UpdateSales\Delete.cshtml" />
+    <Content Include="Views\UpdateSales\Edit.cshtml" />
+    <Content Include="Views\UpdateSales\Index.cshtml" />
     <Content Include="Views\Menu\Create.cshtml" />
     <Content Include="Views\Menu\Delete.cshtml" />
     <Content Include="Views\Menu\Details.cshtml" />
