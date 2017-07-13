@@ -21,7 +21,7 @@
     </div>
 </div>
 
-<table class="table">
+<table class="table table-bordered table-responsive table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -35,7 +35,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Category)
         </th>
-        <th></th>
+        <th>
+            Update
+        </th>
     </tr>
 
     @foreach (var item in Model)

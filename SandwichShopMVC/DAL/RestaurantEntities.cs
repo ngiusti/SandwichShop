@@ -15,7 +15,7 @@ namespace SandwichShopMVC.DAL
         }
 
         public DbSet<Ingredients> Ingredients { get; set; }
-        public DbSet<Inventory> Inventory { get; set; }
+        public DbSet<UpdateSales> Inventory { get; set; }
         public DbSet<Menu> Menu { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -45,15 +45,15 @@ namespace SandwichShopMVC.DAL
             context.SaveChanges();
 
             // Adding to the Inventory Model to populate table with Mock Data
-            var inventoryCount = new List<Inventory>
+            var inventoryCount = new List<UpdateSales>
             {
-            new Inventory{ InventoryName = "Ham", Quantity = 6},
-            new Inventory{ InventoryName = "Turkey", Quantity = 16},
-            new Inventory{ InventoryName = "Swiss", Quantity = 63},
-            new Inventory{ InventoryName = "Cheddar", Quantity = 26},
-            new Inventory{ InventoryName = "Roast Beef", Quantity = 18},
-            new Inventory{ InventoryName = "Pickle", Quantity = 68},
-            new Inventory{ InventoryName = "Spicy Brown Mustard", Quantity = 46},
+            new UpdateSales{ Name = "Ham", Quantity = 6},
+            new UpdateSales{ Name = "Turkey", Quantity = 16},
+            new UpdateSales{ Name = "Swiss", Quantity = 63},
+            new UpdateSales{ Name = "Cheddar", Quantity = 26},
+            new UpdateSales{ Name = "Roast Beef", Quantity = 18},
+            new UpdateSales{ Name = "Pickle", Quantity = 68},
+            new UpdateSales{ Name = "Spicy Brown Mustard", Quantity = 46},
             };
             inventoryCount.ForEach(s => context.Inventory.Add(s));
             context.SaveChanges();
