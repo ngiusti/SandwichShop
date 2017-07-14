@@ -54,24 +54,25 @@ namespace SandwichShopMVC.Controllers
 
         // GET: Menu/Create
         public ActionResult Create()
-        {     
-            return View();
+        {
+            Menu menu = new Menu();
+            List<Ingredients> ingredients = db.Ingredients.ToList();
+
+            var tuple = new Tuple<List<Ingredients>, Menu>(ingredients, menu);
+            return View(tuple);
         }
+
+
 
         // POST: Menu/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MenuID,Name,Ingredients")] Menu menu, UpdateSales inventory)
+        public ActionResult Create([Bind(Include = "MenuID,Name")] Menu menu, List<Ingredients> ingredients)
         {
             if (ModelState.IsValid)
             {
-                //
-                // This automatically adds any new sandwich created on the menu page
-                // to the Update Sales page
-                //
-                db.Inventory.Add(inventory);
                 db.Menu.Add(menu);
                 db.SaveChanges();
                 return RedirectToAction("Index");
