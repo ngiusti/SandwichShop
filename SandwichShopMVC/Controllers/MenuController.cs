@@ -53,12 +53,13 @@ namespace SandwichShopMVC.Controllers
         }
 
         // GET: Menu/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-            Menu menu = new Menu();
+            
+            Menu menu = db.Menu.Find(id);
             List<Ingredients> ingredients = db.Ingredients.ToList();
-
             var tuple = new Tuple<List<Ingredients>, Menu>(ingredients, menu);
+            
             return View(tuple);
         }
 
@@ -69,7 +70,7 @@ namespace SandwichShopMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MenuID,Name")] Menu menu, List<Ingredients> ingredients)
+        public ActionResult Create([Bind(Include = "MenuID,Name")] Menu menu)
         {
             if (ModelState.IsValid)
             {
@@ -77,10 +78,11 @@ namespace SandwichShopMVC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+          
             return View(menu);
         }
 
+        
         // GET: Menu/Edit/5
         public ActionResult Edit(int? id)
         {

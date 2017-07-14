@@ -32,17 +32,17 @@
                     </th>
                  </tr>
                     
-              @foreach (Ingredients ingredients in Model.Item1)
-              {
+              <!--@@foreach (Menu menu in Model.Item2)-->
+              
                 <tr>
                     <td>
-                        @ingredients.Name
+                        @Html.DisplayFor(model => model.Item2.MenuID)
                     </td>
                     <td>
-                        @Html.DisplayFor(Model => Model.Item2.Ingredients)
+                        @Html.DisplayFor(model => model.Item2.Ingredients)
                     </td>
                 </tr>
-              }                       
+                                    
             </table>
         </dd>
     </dl>
