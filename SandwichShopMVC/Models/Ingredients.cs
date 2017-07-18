@@ -29,5 +29,7 @@ namespace SandwichShopMVC.Models
         public virtual IEnumerable<UpdateSales> Inventory { get; set; }
         public virtual IEnumerable<Menu> Menu { get; set; }
 
+
+
     }
 }
