@@ -53,14 +53,15 @@ namespace SandwichShopMVC.Controllers
         }
 
         // GET: Menu/Create
-        public ActionResult Create(int? id)
+        public ActionResult Create()
         {
-            
+            /*
             Menu menu = db.Menu.Find(id);
             List<Ingredients> ingredients = db.Ingredients.ToList();
             var tuple = new Tuple<List<Ingredients>, Menu>(ingredients, menu);
+            */
             
-            return View(tuple);
+            return View();
         }
 
 

@@ -24,11 +24,11 @@
             <table class="table">
                 <tr>
                     <th>
-                        Ingredient
+                        @Html.DisplayNameFor(model => model.Item2.Ingredients)
                     </th>
 
                     <th>
-                        Amount
+                        @Html.DisplayNameFor(model => model.Item2.Quantity)
                     </th>
                  </tr>
                     
@@ -36,10 +36,10 @@
               
                 <tr>
                     <td>
-                        @Html.DisplayFor(model => model.Item2.MenuID)
+                        @Html.DisplayFor(model => model.Item2.Ingredients)
                     </td>
                     <td>
-                        @Html.DisplayFor(model => model.Item2.Ingredients)
+                        @Html.DisplayFor(model => model.Item2.Quantity)
                     </td>
                 </tr>
                                     
