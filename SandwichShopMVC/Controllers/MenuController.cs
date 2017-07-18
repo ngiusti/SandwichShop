@@ -71,7 +71,7 @@ namespace SandwichShopMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MenuID,Name")] Menu menu)
+        public ActionResult Create([Bind(Include = "MenuID,Name,Ingredients")] Menu menu)
         {
             if (ModelState.IsValid)
             {

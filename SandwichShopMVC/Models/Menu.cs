@@ -47,13 +47,10 @@ namespace SandwichShopMVC.Models
     {
         public int MenuID { get; set; }
         public string Name { get; set; }
-        public string Ingredients { get; set; }
-        public int Quantity { get; set; }
-
-        public IEnumerable<SelectListItem> Options { set; get; }
-        public string[] SelectedOptions { get; set; }
+        public string[] Ingredients { get; set; }
        
-        public virtual IEnumerable<UpdateSales> Inventory { get; set; }
 
+        public virtual ICollection<UpdateSales> Inventory { get; set; }
+      
     }
 }
