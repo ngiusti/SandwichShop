@@ -175,6 +175,7 @@
       <DependentUpon>201707131729164_newMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\BigViewModel.cs" />
     <Compile Include="Models\Ingredients.cs" />
     <Compile Include="Models\UpdateSales.cs" />
     <Compile Include="Models\Menu.cs" />

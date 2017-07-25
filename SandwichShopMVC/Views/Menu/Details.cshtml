@@ -1,5 +1,5 @@
 ﻿@using SandwichShopMVC.Models;
-@model Tuple<List<Ingredients>, Menu>
+@model SandwichShopMVC.Models.BigViewModel
 
 
 @{
@@ -13,11 +13,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(Model => Model.Item2.MenuID)
+            @Html.DisplayNameFor(Model => Model.Menu.Name)
         </dt>
         <!--This is where the name is displayed for the 'header'-->
         <dd>
-            @Html.DisplayFor(Model => Model.Item2.Name)
+            @Html.DisplayFor(Model => Model.Menu.Name)
         </dd>       
      
         <dd>
@@ -32,14 +32,14 @@
                     </th>
                  </tr>
                     
-              <!--@@foreach (Menu menu in Model.Item2)-->
+              <!--@@foreach (Menu menu in Model.Menu)-->
               
                 <tr>
                     <td>
-                        @Html.DisplayFor(model => model.Item2.Name)
+                        @Html.DisplayFor(model => model.Menu.Ingredients)
                     </td>
                     <td>
-                        @Html.DisplayFor(model => model.Item2.Ingredients)
+                        @Html.DisplayFor(model => model.Menu.Inventory)
                     </td>
                 </tr>
                                     
@@ -48,6 +48,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Item2.MenuID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Menu.MenuID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
