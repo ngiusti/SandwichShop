@@ -56,11 +56,13 @@ namespace SandwichShopMVC.Controllers
         // GET: Menu/Create
         public ActionResult Create()
         {
-            var model = new BigViewModel();
+            
+            Menu menu = db.Menu.Find(id);
             List<Ingredients> ingredients = db.Ingredients.ToList();
-            model.Ingredients = ingredients;
-            return View(model);
-        }   
+            var tuple = new Tuple<List<Ingredients>, Menu>(ingredients, menu);
+            
+            return View(tuple);
+        }
 
 
 
